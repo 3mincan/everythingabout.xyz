@@ -1,34 +1,59 @@
 import React, { FC } from "react"
-import { Router, RouteComponentProps, Link } from "@reach/router"
-import slugify from '@sindresorhus/slugify';
 
-import { Main } from "./pages/main/Main";
-import { Country } from "./pages/country/Country";
 
-let Home = (props: RouteComponentProps) => <Main />
-let CountryPage = (props: RouteComponentProps) => <Country name={name} />
-let Dash = (props: RouteComponentProps) => <div>Dash</div>
-const NotFound = () => <p>Sorry, nothing here</p>
+import { Main } from "./pages/main/";
+import { Country } from "./pages/country/";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-interface InvoiceProps extends RouteComponentProps {
-  invoiceId?: string;
+interface Props {
+  default: boolean
 }
 
-const Invoice = (props: InvoiceProps) => (
-  <div>
-    <h1>Invoice {props.invoiceId}</h1>
-  </div>
-)
+let Home = () => <Main />
+let CountryPage = () => <Country />
+let Dash = () => <div>Dash</div>
+const PageNotFound = (props: Props) => {
+  return <div>Page not found</div>;
+}
 
 export const App: FC = () => {
   return (
     <Router>
-      <Home path="/" />
-      <CountryPage path="country/:name" />
-      <Dash path="dashboard" />
-      <Invoice path="invoice/:invoiceId" />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+        <Route path="/:name">
+          <Country />
+        </Route>
+        </Switch>
     </Router>
   )
-
 }
 
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+  );
+}

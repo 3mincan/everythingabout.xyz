@@ -1,0 +1,44 @@
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.table {
+  display: table;
+  background-color: #343a40;
+}
+
+.row {
+  display: table-row;
+}
+
+.row.head {
+    font-weight: 700;
+    color: #fff;
+}
+
+.row:nth-child(odd) {
+    background-color: rgba(255,255,255,.05);
+}
+
+.cell {
+  display: table-cell;
+  padding: 1rem 0.5rem;
+}
+
+.row:hover {
+  background-color: #000;
+}
+
+.flag {
+    width: 3rem;
+    height: auto;
+}
+
+.bg-dark {
+    background-color: #000!important;
+}
