@@ -12,16 +12,16 @@ a:hover {
   background-color: #343a40;
 }
 
-.row {
+.table-row {
   display: table-row;
 }
 
-.row.head {
+.table-row.head {
     font-weight: 700;
     color: #fff;
 }
 
-.row:nth-child(odd) {
+.table-row:nth-child(odd) {
     background-color: rgba(255,255,255,.05);
 }
 
@@ -30,7 +30,7 @@ a:hover {
   padding: 1rem 0.5rem;
 }
 
-.row:hover {
+.table-row:hover {
   background-color: #000;
 }
 

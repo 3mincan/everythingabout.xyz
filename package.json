@@ -5,6 +5,7 @@
   "dependencies": {
     "@sindresorhus/slugify": "^1.0.0",
     "@types/classnames": "^2.2.10",
+    "@types/react-helmet": "^6.0.0",
     "@types/react-lottie": "^1.2.5",
     "@types/react-table": "^7.0.19",
     "axios": "^0.19.2",
@@ -15,6 +16,8 @@
     "react": "^16.6.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.6.1",
+    "react-ga": "^3.1.2",
+    "react-helmet": "^6.1.0",
     "react-lottie": "^1.2.3",
     "react-number-format": "^4.4.1",
     "react-router-dom": "^5.2.0",

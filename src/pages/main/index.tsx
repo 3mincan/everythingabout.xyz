@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useState, useEffect } from "react";
-import { Nav, Row, Col, Table, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Axios from "axios";
-import slugify from '@sindresorhus/slugify';
+import { Nav } from "../nav"
 import { Loader } from '../loader/Loader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import baseURL from "../../api";
@@ -86,9 +86,12 @@ export const Main: FC = () => {
     return (
         <>
             {isLoading ? <Loader /> :
+            <>
+                <iframe width="100%" height="150%" src={`http://maps.google.com/maps?z=3&t=m&output=embed`} />
+                <Nav></Nav>
                 <Container>
                     <div role="grid" className="table">
-                        <div role="row" className="row head bg-dark">
+                        <div role="row" className="table-row head bg-dark">
                             <div role="gridcell" className="cell">
                             </div>
                             <div role="gridcell" className="cell">
@@ -113,7 +116,7 @@ export const Main: FC = () => {
                         {!isLoading && !error &&
                             countries.map((country, index) => (
 
-                                <Link role="row" className="row" to={(`${country.alpha3Code}`).toLowerCase()} key={index}>
+                                <Link role="row" className="table-row" to={(`${country.alpha3Code}`).toLowerCase()} key={index}>
                                     <div role="gridcell" className="cell">
                                         <img src={country.flag} alt={`${country.name} flag`} className="flag" />
                                     </div>
@@ -174,6 +177,7 @@ export const Main: FC = () => {
                 {error && <div>Error message</div>}
             </Table> */}
                 </Container>
+                </>
             }
         </>
     );

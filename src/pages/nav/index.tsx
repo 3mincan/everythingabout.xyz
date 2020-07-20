@@ -3,6 +3,11 @@ import Navbar from 'react-bootstrap/Navbar'
 import Lottie from 'react-lottie';
 import animationData from "../../assets/info-icon2.json";
 import './style.scss';
+import { Helmet } from "react-helmet";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-173040299-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 type Props = {
     name?: string
@@ -21,16 +26,14 @@ export const Nav: FC<Props> = ({  name }) => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{name ? `Everything About ${name} | everythingabout.xyz` : "everythingabout.xyz | basic info about all countries"}</title>
+                <link rel="canonical" href="http://everythingabout.xyz/" />
+            </Helmet>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" className="d-flex justify-content-center text-center">
                 <Navbar.Brand href="/">
                     <div className="d-flex">
-                    {/* <img
-                        alt=""
-                        src="https://react-bootstrap.github.io/logo.svg"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    /> */}
                         <Lottie options={defaultOptions}
                             height={30}
                             width={30} />
