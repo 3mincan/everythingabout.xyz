@@ -117,7 +117,7 @@ export const Country: FC<State> = () => {
                                 <Container className="d-flex" key={index}>
                                     <Col lg={6}>
                                         <img className="country-flag" src={country.flag} />
-                                        <iframe className="country-map" src={`http://maps.google.com/maps?q=${country.name}&z=5&t=m&output=embed`} />
+                                        <iframe className="country-map" src={`https://maps.google.com/maps?q=${country.name}&z=5&t=m&output=embed`} />
                                     </Col>
                                     <Col lg={6}>
                                         <Row className="w-100 d-flex">
