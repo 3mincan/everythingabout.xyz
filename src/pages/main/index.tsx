@@ -2,6 +2,7 @@ import React, { FC, useCallback, useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Axios from "axios";
 import { Nav } from "../nav"
+import { Footer } from "../footer"
 import { Loader } from '../loader/Loader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import baseURL from "../../api";
@@ -88,8 +89,8 @@ export const Main: FC = () => {
             {isLoading ? <Loader /> :
             <>
                 <iframe width="100%" height="150%" src={`https://maps.google.com/maps?z=3&t=m&output=embed`} />
-                <Nav></Nav>
-                <Container>
+                <Nav />
+                <Container className="mb-5">
                     <div role="grid" className="table">
                         <div role="row" className="table-row head bg-dark">
                             <div role="gridcell" className="cell">
@@ -150,6 +151,7 @@ export const Main: FC = () => {
                             ))}
                     </div>
                 </Container>
+                <Footer />
                 </>
             }
         </>

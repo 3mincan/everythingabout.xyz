@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Lottie from 'react-lottie';
 import animationData from "../../assets/info-icon2.json";
@@ -7,14 +7,13 @@ import { Helmet } from "react-helmet";
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-173040299-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 type Props = {
     name?: string
 }
 
-export const Nav: FC<Props> = ({  name }) => {
-
+export const Nav: FC<Props> = ({ name }) => {
+    ReactGA.pageview(window.location.pathname);
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -23,7 +22,6 @@ export const Nav: FC<Props> = ({  name }) => {
             preserveAspectRatio: 'xMidYMid slice'
         }
     }
-
     return (
         <>
             <Helmet>
@@ -37,10 +35,10 @@ export const Nav: FC<Props> = ({  name }) => {
                         <Lottie options={defaultOptions}
                             height={30}
                             width={30} />
-                        <span className="px-1 brand-text">{name ? `Everything About ${name}` : "everythingabout.xyz"}</span>  
+                        <span className="px-1 brand-text">{name ? `Everything About ${name}` : "everythingabout.xyz"}</span>
                     </div>
                 </Navbar.Brand>
             </Navbar>
         </>
-)
+    )
 }

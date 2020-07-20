@@ -4,6 +4,7 @@ import baseURL from "../../api";
 import { Loader } from "../loader/Loader";
 import { useParams } from "react-router-dom";
 import { Nav } from "../nav";
+import { Footer } from "../footer"
 import { Container, Col, Row, Card } from "react-bootstrap";
 import './style.scss';
 
@@ -114,7 +115,7 @@ export const Country: FC<State> = () => {
                         data.map((country, index) => (
                             <>
                                 <Nav name={country.name} key={index+'nav'} />
-                                <Container className="d-flex" key={index}>
+                                <Container className="d-flex mb-5" key={index}>
                                     <Col lg={6}>
                                         <img className="country-flag" src={country.flag} />
                                         <iframe className="country-map" src={`https://maps.google.com/maps?q=${country.name}&z=5&t=m&output=embed`} />
@@ -179,6 +180,7 @@ export const Country: FC<State> = () => {
                                         </Row>
                                     </Col>
                                 </Container>
+                                <Footer />
                             </>
                         ))}
                 </>

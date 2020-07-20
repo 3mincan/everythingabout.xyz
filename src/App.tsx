@@ -1,7 +1,7 @@
 import React, { FC } from "react"
-
-
 import { Main } from "./pages/main/";
+import { About } from "./pages/about/";
+import { Contact } from "./pages/contact/";
 import { Country } from "./pages/country/";
 import {
   BrowserRouter as Router,
@@ -30,18 +30,13 @@ export const App: FC = () => {
           <Route path="/about">
             <About />
           </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
         <Route path="/:name">
           <Country />
         </Route>
         </Switch>
     </Router>
   )
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
 }
