@@ -149,33 +149,6 @@ export const Main: FC = () => {
                                 </Link>
                             ))}
                     </div>
-
-                    {/* <Table responsive striped bordered hover variant="dark">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Country Code</th>
-                        <th>ISO Codes</th>
-                        <th>Population</th>
-                        <th>Area (km&sup2;)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {!isLoading && !error &&
-                        countries.map((country, index) => (
-                            <tr key={index}>
-                                <td key={country.name}><Link to={slugify(`${country.name}`)}>{country.name}</Link></td>
-                                <td key={country.callingCodes[0]}>{country.callingCodes[0]}</td>
-                                <td key={country.alpha2Code}>{country.alpha2Code}</td>
-                                <td key={country.population}>{country.population}</td>
-                                <td key={country.area}>{country.area}</td>
-
-                            </tr>
-                        ))
-                    }
-                </tbody>
-                {error && <div>Error message</div>}
-            </Table> */}
                 </Container>
                 </>
             }
