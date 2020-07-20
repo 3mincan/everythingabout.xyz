@@ -87,7 +87,7 @@ export const Main: FC = () => {
         <>
             {isLoading ? <Loader /> :
             <>
-                <iframe width="100%" height="150%" src={`http://maps.google.com/maps?z=3&t=m&output=embed`} />
+                <iframe width="100%" height="150%" src={`https://maps.google.com/maps?z=3&t=m&output=embed`} />
                 <Nav></Nav>
                 <Container>
                     <div role="grid" className="table">
