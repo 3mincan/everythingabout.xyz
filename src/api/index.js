@@ -1,2 +1,2 @@
-const baseURL = "https://restcountries.eu/rest/v2/";
+const baseURL = "http://api.countrylayer.com/v2/";
 export default baseURL;
